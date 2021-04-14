@@ -34,8 +34,6 @@
               </div>
           </div>
       </div>
-  
-
       <div class="col-md-4 py-3">
           <div class="card shadow" style="width: 18rem;">
               <div class="inner">
@@ -48,7 +46,6 @@
               </div>
           </div>
       </div>
-
       <div class="col-md-4 py-3">
           <div class="card shadow" style="width: 18rem;">
               <div class="inner">
@@ -62,5 +59,6 @@
           </div>
       </div>
   </div>
+  <br>
 </div>
 @endsection
