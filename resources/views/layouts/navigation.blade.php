@@ -90,7 +90,21 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
         </div>
-
+        @if (Auth::user()->hasRole('user'))
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('dashboard.myprofile')"
+                    :active="request()->routeIs('dashboard.myprofile')">
+                    {{ __('My profile') }}
+                </x-responsive-nav-link>
+            </div>
+        @endif
+        @if (Auth::user()->hasRole('administrator'))
+            <div class="pt-2 pb-3 space-y-1">
+                <x-responsive-nav-link :href="route('dashboard.gestionar')" :active="request()->routeIs('dashboard.gestionar')">
+                    {{ __('Gestionar medicamentos') }}
+                </x-responsive-nav-link>
+            </div>
+        @endif
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="flex items-center px-4">
