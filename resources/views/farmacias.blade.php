@@ -3,6 +3,7 @@
 @section('titulo')
 <title>Farmacias</title>
 @endsection
+<link rel="stylesheet" type="text/css" href="css/farmacias.css">
 <div>
     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
@@ -13,19 +14,13 @@
                 <p>Some representative placeholder content for the first slide.</p>
               </div>
           </div>
-          <div class="carousel-item">
-            <img src="img/img15.jpg" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/img15.jpg" class="d-block w-100" alt="...">
-          </div>
         </div>
     </div>
 </div>
 
-<!--Productos-->
+<!--Farmacias-->
 <div class="container">
-  <h1 class="hola">Medicamentos Disponibles</h1>
+  <h1 class="farmacias__h1">Nuestras Farmacias</h1>
   <div class="row justify-content-center">
       <div class="col-md-4 py-3">
           <div class="card shadow" style="width: 18rem;">
