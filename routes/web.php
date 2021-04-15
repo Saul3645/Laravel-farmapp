@@ -42,11 +42,13 @@ Route::group(['middleware' => ['auth']], function() {
 // for users
 Route::group(['middleware' => ['auth', 'role:user']], function() { 
     Route::get('/dashboard/myprofile', 'App\Http\Controllers\DashboardController@myprofile')->name('dashboard.myprofile');
+    
 });
 
 // for admin
 Route::group(['middleware' => ['auth', 'role:administrator']], function() { 
     Route::get('/dashboard/gestionar', 'App\Http\Controllers\DashboardController@gestionar')->name('dashboard.gestionar');
+
 });
 
 require __DIR__.'/auth.php';
