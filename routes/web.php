@@ -30,6 +30,10 @@ Route::get('/farmacias', function () {
     return view('farmacias');
 });
 
+Route::get('/create', function () {
+    return view('gestionar');
+});
+
 //auth route for both 
 Route::group(['middleware' => ['auth']], function() { 
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
