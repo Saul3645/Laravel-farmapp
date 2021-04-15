@@ -17,7 +17,7 @@ class SucursalesController extends Controller
     {
         //
         $sucursales= Sucursales::all();
-        return view('gestionar',compact('sucursales'));
+        return view('admindash1',compact('sucursales'));
     }
 
     /**
@@ -60,7 +60,7 @@ class SucursalesController extends Controller
     public function show(Sucursales $sucursales)
     {
         //
-        return view('admindash',compact('sucursales'));
+        return view('',compact('sucursales'));
     }
 
     /**
