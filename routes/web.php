@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth', 'role:user']], function() {
 
 // for admin
 Route::group(['middleware' => ['auth', 'role:administrator']], function() { 
-    Route::get('/dashboard/gestionar', 'App\Http\Controllers\MedicamentosController@index')->name('dashboard.gestionar');
+    Route::resource('medicamento', MedicamentosController::class);
 });
 
 require __DIR__.'/auth.php';
