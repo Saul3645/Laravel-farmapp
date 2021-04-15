@@ -31,16 +31,6 @@
                               </tr>
                             </thead>
                             <tbody>
-                            @foreach ($sucursales as $sucursales)
-                              <tr>
-                                <td>{{ $sucursales->Nombre }}</td>
-                                <td>{{ $sucursales->Descripcion }}</td>
-                                <td>{{ $sucursales->Telefono}}</td>
-                                <td>{{ $sucursales->Direccion }}</td>
-                                <!--<td><img src="/{{$vacante->file}}" width="100" height="100"><td>-->
-                                <td><a href="/{{$sucursales->url}}">Descargar archivo</a><td>
-                              </tr>
-                            @endforeach
                             </tbody>
                           </table>
                     </div>

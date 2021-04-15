@@ -33,7 +33,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="/login">Perfil</a>
-                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href=" {{route('Sucursales.index')}}">Another action</a>
                 <a class="dropdown-item" href="#">Something else here</a>
               </div>
             </li>

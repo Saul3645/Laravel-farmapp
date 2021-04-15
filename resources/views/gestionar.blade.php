@@ -49,6 +49,7 @@
                                 </div>
                               </div>
                             <button type="submit" class="btn btn-primary">Registrar</button>
+                            <a class="btn btn-danger" href=" {{route('Sucursales.index')}}">Ver Lista De Farmacias</a>
                         </form>
                     </div>
                 </div>
