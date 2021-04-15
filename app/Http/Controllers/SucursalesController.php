@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Sucursales;
 use Illuminate\Http\Request;
+use App\Http\Requests\Sucursales1Request; // no olvidar importar la ruta
 
 class SucursalesController extends Controller
 {
@@ -15,6 +16,8 @@ class SucursalesController extends Controller
     public function index()
     {
         //
+        $sucursales= Sucursales::all();
+        return view('gestionar',compact('sucursales'));
     }
 
     /**
@@ -25,6 +28,7 @@ class SucursalesController extends Controller
     public function create()
     {
         //
+        return view('gestionar');
     }
 
     /**
@@ -33,9 +37,18 @@ class SucursalesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Sucursales1Request $request)
     {
         //
+        $datos=new \App\Models\Sucursales;
+        $datos->Nombre=$request->Nombre;
+        $datos->Descripcion=$request->Descripcion;
+        $datos->Telefono=$request->Telefono;
+        $datos->Direccion=$request->Direccion;
+        $datos->Url=$request->Url->store('storage');
+        $datos->save();
+        $request->file('file')->store('public');
+        return redirect()->route('sucursales.index')->with('mensaje', 'Solicitud Registrada');
     }
 
     /**
@@ -47,6 +60,7 @@ class SucursalesController extends Controller
     public function show(Sucursales $sucursales)
     {
         //
+        return view('admindash',compact('sucursales'));
     }
 
     /**

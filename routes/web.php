@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\SucursalesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,3 +52,6 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function() {
 });
 
 require __DIR__.'/auth.php';
+
+
+Route::resource('Sucursales', 'App\Http\Controllers\SucursalesController');

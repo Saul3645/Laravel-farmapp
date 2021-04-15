@@ -22,28 +22,29 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="formulario__sucursal">
-                        <form class="formulario__registro">
+                        <form class="formulario__registro" action={{ route('Sucursales.store') }} method="POST" enctype="multipart/form-data">
+                            @csrf
                             <div class="form-group">
                                 <h1 class="Formulario__Titulo">Registro de Farmacias</h1>
                                 <label for="exampleInputEmail1">Nombre De La Farmacia:</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Un Nombre" aria-describedby="emailHelp">
+                                <input type="text" class="form-control" name="Nombre" value="{{ old('Nombre') }}" placeholder="Ingrese Un Nombre" aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group">
                                 <label for="exampleInputPassword1" >Descripción:</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Una Descripción">
+                                <input type="text" class="form-control" name="Descripcion" value="{{ old('Descripcion') }}" placeholder="Ingrese Una Descripción">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Dirección:</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Ingrese Su Dirección" aria-describedby="emailHelp">
+                                <input type="text" class="form-control" name="Direccion" value="{{ old('Direccion') }}" placeholder="Ingrese Su Dirección" aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group">
                                 <label for="exampleInputPassword1">Telefono:</label>
-                                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Ingrese Un Precio">
+                                <input type="number" class="form-control" name="Telefono" value="{{ old('Telefono') }}" placeholder="Ingrese Un Precio">
                             </div>
     
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                  <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                  <input type="file" class="custom-file-input" name="Url" value="{{ old('Url') }}" aria-describedby="inputGroupFileAddon01">
                                   <label class="custom-file-label" for="inputGroupFile01">Elegir file....</label>
                                 </div>
                               </div>
