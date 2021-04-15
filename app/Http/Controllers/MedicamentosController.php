@@ -15,6 +15,8 @@ class MedicamentosController extends Controller
     public function index()
     {
         //
+        $datos['medicamentos']= Medicamentos::paginate(2);
+        return view('gestionar',$datos);
     }
 
     /**
