@@ -60,7 +60,7 @@ class SucursalesController extends Controller
     public function show(Sucursales $sucursales)
     {
         //
-        return view('',compact('sucursales'));
+        return view('mostrar_farmacia',compact('sucursales'));
     }
 
     /**
@@ -95,5 +95,7 @@ class SucursalesController extends Controller
     public function destroy(Sucursales $sucursales)
     {
         //
+        $sucursales->delete();
+        return back()->with('mensaje','La sucursal ha sido eliminado correctamente');
     }
 }

@@ -30,6 +30,7 @@
                                 <th scope="col">Direccion</th>
                                 <th scope="col">Imagen</th>
                                 <th scope="col">Vista Imagen</th>
+                                <th scope="col">Acciónes</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -42,6 +43,14 @@
                                 <td>{{ $sucursales->Direccion }}</td>
                                 <td><a href="/{{$sucursales->Url}}">Descargar archivo</a><td>
                                 <img src="{{ asset($sucursales->Url)}}" alt="imagen" width="200">
+                                <td><a href="{{ route('sucursales.show',$sucursales->id)}}">Ver ficha</a><td>
+                                <td>
+                                    <form action="{{ route('sucursales.destroy',$sucursales->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">ELIMINAR</button>
+                                    </form>
+                                </td>
                               </tr>
                             @endforeach
                             </tbody>
