@@ -11,9 +11,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in ADMIN!<br>
-                    CRUD
-                    <br>
+                    <h1 class="Formulario__Titulo">Registro</h1>
                 </div>
             </div>
         </div>
@@ -25,7 +23,7 @@
                         <form class="formulario__registro" action={{ route('Sucursales.store') }} method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group">
-                                <h1 class="Formulario__Titulo">Registro de Farmacias</h1>
+                                <h1 class="Formulario__Titulo">Farmacias</h1><br>
                                 <label for="exampleInputEmail1">Nombre De La Farmacia:</label>
                                 <input type="text" class="form-control" name="Nombre" value="{{ old('Nombre') }}" placeholder="Ingrese Un Nombre" aria-describedby="emailHelp">
                                 </div>

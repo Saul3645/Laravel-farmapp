@@ -5,7 +5,7 @@
             <div class="flex">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href= "{{ url('/') }}">
+                    <a href="{{ url('/') }}">
                         <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
                     </a>
                 </div>
@@ -29,6 +29,12 @@
                         <x-nav-link :href="route('dashboard.gestionar')"
                             :active="request()->routeIs('dashboard.gestionar')">
                             {{ __('Gestionar medicamentos') }}
+                        </x-nav-link>
+                    </div>
+                    <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                        <x-nav-link :href="route('Sucursales.index')"
+                            :active="request()->routeIs('Sucursales.index')">
+                            {{ __('Farmacias') }}
                         </x-nav-link>
                     </div>
                 @endif
@@ -100,7 +106,8 @@
         @endif
         @if (Auth::user()->hasRole('administrator'))
             <div class="pt-2 pb-3 space-y-1">
-                <x-responsive-nav-link :href="route('dashboard.gestionar')" :active="request()->routeIs('dashboard.gestionar')">
+                <x-responsive-nav-link :href="route('dashboard.gestionar')"
+                    :active="request()->routeIs('dashboard.gestionar')">
                     {{ __('Gestionar medicamentos') }}
                 </x-responsive-nav-link>
             </div>
