@@ -83,9 +83,17 @@ class MedicamentosController extends Controller
      * @param  \App\Models\Medicamentos  $medicamentos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medicamentos $Medicamento)
+    public function update(MedicamentosRequest $request, Medicamentos $Medicamento)
     {
-        $Medicamento->update($request->all());
+        $Medicamento->Nombre=$request->Nombre;
+        $Medicamento->Descripcion=$request->Descripcion;
+        $Medicamento->Caracteristicas=$request->Caracteristicas;
+        $Medicamento->Precio=$request->Precio;
+        $Medicamento->sucursales_id=$request->sucursales_id;
+        $Medicamento->Url=$request->Url->store('storage');
+        $Medicamento->save();
+        $request->file('Url')->store('public');
+        $Medicamento->update();
         return redirect()->route('Medicamentos.index')->with('mensaje', 'El medicamento se ha actualizado correctamente');
     }
 

@@ -48,7 +48,7 @@ class SucursalesController extends Controller
         $datos->Url=$request->Url->store('storage');
         $datos->save();
         $request->file('Url')->store('public');
-        return redirect()->route('sucursales.index')->with('mensaje', 'Solicitud Registrada');
+        return redirect()->route('Sucursales.index')->with('mensaje', 'Solicitud Registrada');
     }
 
     /**
@@ -89,9 +89,7 @@ class SucursalesController extends Controller
         $Sucursale->Direccion=$request->Direccion;
         $Sucursale->Url=$request->Url->store('storage');
         $Sucursale->save();
-
         $request->file('Url')->store('public');
-        
         $Sucursale->update();
         return redirect()->route('Sucursales.index')->with('mensaje', 'La sucursal se ha actualizado correctamente');
     }
@@ -108,4 +106,9 @@ class SucursalesController extends Controller
         $Sucursale->delete();
         return back()->with('mensaje','La sucursal ha sido eliminado correctamente');
     }
+
+    // public function farmacias(){
+    //     $Nombre= 'Mauricio';
+    //     return view('farmacias',compact('Nombre'));
+    // }
 }
