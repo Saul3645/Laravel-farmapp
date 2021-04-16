@@ -19,7 +19,7 @@ class MedicamentosController extends Controller
         // $datos['medicamentos']= Medicamentos::paginate(2);
         // return view('gestionar',$datos);
         $medicamentos= Medicamentos::all();
-        return view('gestionar1',compact('medicamentos'));
+        return view('admindash2',compact('medicamentos'));
     }
 
     /**

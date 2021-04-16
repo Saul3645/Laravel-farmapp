@@ -11,7 +11,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Lista de farmacias
+                    Lista de Medicamentos
                 </div>
             </div>
         </div>
@@ -23,23 +23,27 @@
                         <table class="table table-hover">
                             <thead>
                               <tr>
+                                <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Descripción</th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Direccion</th>
+                                <th scope="col">Características</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Sucursal</th>
                                 <th scope="col">Imagen</th>
                                 <th scope="col">Vista Imagen</th>
                               </tr>
                             </thead>
                             <tbody>
-                            @foreach ($sucursales as $sucursales)
+                            @foreach ($medicamentos as $medicamentos)
                               <tr>
-                                <td>{{ $sucursales->Nombre }}</td>
-                                <td>{{ $sucursales->Descripcion }}</td>
-                                <td>{{ $sucursales->Telefono}}</td>
-                                <td>{{ $sucursales->Direccion }}</td>
-                                <td><a href="/{{$sucursales->Url}}">Descargar archivo</a><td>
-                                <img src="{{ asset($sucursales->Url)}}" alt="imagen" width="200">
+                                <td>{{ $medicamentos->id }}</td>
+                                <td>{{ $medicamentos->Nombre }}</td>
+                                <td>{{ $medicamentos->Descripcion }}</td>
+                                <td>{{ $medicamentos->Caracteristicas}}</td>
+                                <td>{{ $medicamentos->Precio }}</td>
+                                <td>{{ $medicamentos->sucursales_id }}</td>
+                                <td><a href="/{{$medicamentos->Url}}">Descargar archivo</a><td>
+                                <img src="{{ asset($medicamentos->Url)}}" alt="imagen" width="200">
                               </tr>
                             @endforeach
                             </tbody>
