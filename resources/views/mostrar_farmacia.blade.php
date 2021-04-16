@@ -11,9 +11,8 @@
     <p>Nombre: {{ $sucursales->id}}</p>
     <p>Nombre: {{ $sucursales->Nombre}}</p>
     <p>Edad: {{ $sucursales->Descripcion}}</p>
-    <p>Edad: {{ $sucursales->sucursale}}</p>
+    <p>Edad: {{ $sucursales->Telefono}}</p>
     <p>Email: {{ $sucursales->Direcion}}</p>
-    <p>Email: {{ $sucursales->estudios}}</p>
     <p>Archivo: {{ $sucursales->file}}</p>
     <img src="{{ asset($sucursales->Url)}}" alt="imagen" width="200">
 </body>
