@@ -12,7 +12,7 @@ class DashboardController extends Controller
         if(Auth::user()->hasRole('user')){
             return view('userdash');
         }elseif(Auth::user()->hasRole('administrator')){
-            return view('admindash1');
+            return view('admindash');
         }elseif(Auth::user()->hasRole('superadministrator')){
             return view('superdash');
         }
