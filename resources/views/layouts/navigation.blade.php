@@ -28,7 +28,7 @@
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('dashboard.gestionar')"
                             :active="request()->routeIs('dashboard.gestionar')">
-                            {{ __('Gestionar medicamentos') }}
+                            {{ __('Gestionar Medicamentos Y Farmacias') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
