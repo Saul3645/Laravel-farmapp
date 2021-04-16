@@ -53,4 +53,6 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function() {
 
 require __DIR__.'/auth.php';
 
+Route::resource('sucursales', 'App\Http\Controllers\SucursalesController');
+
 
