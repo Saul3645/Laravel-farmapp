@@ -95,6 +95,8 @@
                                 </select>
                               </div>
                             <button type="submit" class="btn btn-primary">Registrar</button>
+                            
+                            <a class="btn btn-danger" href=" {{route('Medicamentos.index')}}">Ver Lista De Medicamentos</a>
                         </form>
                     </div>
                 </div>
