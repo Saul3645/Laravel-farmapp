@@ -48,10 +48,9 @@ Route::group(['middleware' => ['auth', 'role:user']], function() {
 // for admin
 Route::group(['middleware' => ['auth', 'role:administrator']], function() { 
     Route::get('/dashboard/gestionar', 'App\Http\Controllers\DashboardController@gestionar')->name('dashboard.gestionar');
-
+    Route::resource('Sucursales', 'App\Http\Controllers\SucursalesController');
 });
 
 require __DIR__.'/auth.php';
 
 
-Route::resource('Sucursales', 'App\Http\Controllers\SucursalesController');
