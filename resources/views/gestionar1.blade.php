@@ -20,7 +20,7 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div class="formulario__sucursal">
-                        <form class="formulario__registro" action={{ route('Sucursales.store') }} method="POST" enctype="multipart/form-data">
+                        <form class="formulario__registro">
                             @csrf
                             <div class="form-group">
                                 <h1 class="Formulario__Titulo">Farmacias</h1><br>
@@ -87,11 +87,11 @@
                               <div class="form-group">
                                 <label for="exampleFormControlSelect1">Farmacias ID</label>
                                 <select class="form-control"name="sucursales_id" value="{{ old('sucursales_id') }}">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                                  <option>Farmacia1</option>
+                                  <option>Farmacia2</option>
+                                  <option>Farmacia3</option>
+                                  <option>Farmacia4</option>
+                                  <option>Farmacia5</option>
                                 </select>
                               </div>
                             <button type="submit" class="btn btn-primary">Registrar</button>

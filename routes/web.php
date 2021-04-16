@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SucursalesController;
+use App\Http\Controllers\MedicamentosController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,10 @@ Route::get('/create', function () {
     return view('gestionar');
 });
 
+Route::get('/create1', function () {
+    return view('gestionar1');
+});
+
 //auth route for both 
 Route::group(['middleware' => ['auth']], function() { 
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
@@ -49,10 +54,12 @@ Route::group(['middleware' => ['auth', 'role:user']], function() {
 Route::group(['middleware' => ['auth', 'role:administrator']], function() { 
     Route::get('/dashboard/gestionar', 'App\Http\Controllers\DashboardController@gestionar')->name('dashboard.gestionar');
     Route::resource('Sucursales', 'App\Http\Controllers\SucursalesController');
+    Route::resource('Medicamentos', 'App\Http\Controllers\MedicamentosController');//Medicamentos Name del route Medicamentos.store 
 });
 
 require __DIR__.'/auth.php';
 
 Route::resource('sucursales', 'App\Http\Controllers\SucursalesController');
+
 
 

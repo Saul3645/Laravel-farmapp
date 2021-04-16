@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Medicamentos;
 use Illuminate\Http\Request;
+use App\Http\Requests\MedicamentosRequest; // no olvidar importar la ruta
 
 class MedicamentosController extends Controller
 {
@@ -15,8 +16,10 @@ class MedicamentosController extends Controller
     public function index()
     {
         //
-        $datos['medicamentos']= Medicamentos::paginate(2);
-        return view('gestionar',$datos);
+        // $datos['medicamentos']= Medicamentos::paginate(2);
+        // return view('gestionar',$datos);
+        $medicamentos= Medicamentos::all();
+        return view('gestionar1',compact('medicamentos'));
     }
 
     /**
@@ -27,6 +30,7 @@ class MedicamentosController extends Controller
     public function create()
     {
         //
+        return view('gestionar');
     }
 
     /**
@@ -35,9 +39,19 @@ class MedicamentosController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MedicamentosRequest $request)
     {
         //
+        $datos=new \App\Models\Medicamentos;
+        $datos->Nombre=$request->Nombre;
+        $datos->Descripcion=$request->Descripcion;
+        $datos->Caracteristicas=$request->Caracteristicas;
+        $datos->Precio=$request->Precio;
+        $datos->sucursales_id=$request->sucursales_id;
+        $datos->Url=$request->Url->store('storage');
+        $datos->save();
+        $request->file('Url')->store('public');
+        return redirect()->route('Medicamentos.index')->with('mensaje', 'Solicitud Registrada'); /*Medicamentos nombre del route.store*/
     }
 
     /**
