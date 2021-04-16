@@ -8,12 +8,12 @@
 </head>
 <body>
     <h1>Detalle Aspirante</h1>
-    <p>Nombre: {{ $sucursales->id}}</p>
-    <p>Nombre: {{ $sucursales->Nombre}}</p>
-    <p>Edad: {{ $sucursales->Descripcion}}</p>
-    <p>Edad: {{ $sucursales->Telefono}}</p>
-    <p>Email: {{ $sucursales->Direcion}}</p>
-    <p>Archivo: {{ $sucursales->file}}</p>
-    <img src="{{ asset($sucursales->Url)}}" alt="imagen" width="200">
+    <p>Nombre: {{ $Sucursale->id}}</p>
+    <p>Nombre: {{ $Sucursale->Nombre}}</p>
+    <p>Edad: {{ $Sucursale->Descripcion}}</p>
+    <p>Telefono: {{ $Sucursale->Telefono}}</p>
+    <p>Dirección: {{ $Sucursale->Direccion}}</p>
+    <p>Archivo: {{ $Sucursale->Url}}</p>
+    <img src="{{ asset($Sucursale->Url)}}" alt="imagen" width="200">
 </body>
 </html>

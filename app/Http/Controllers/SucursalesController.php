@@ -60,7 +60,7 @@ class SucursalesController extends Controller
     public function show(Sucursales $Sucursale)
     {
         //
-        return view('mostrar_farmacia',compact('sucursal'));
+        return view('mostrar_farmacia',compact('Sucursale'));
     }
 
     /**
@@ -81,9 +81,18 @@ class SucursalesController extends Controller
      * @param  \App\Models\Sucursales  $sucursales
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sucursales $Sucursale)
+    public function update(Sucursales1Request $request, Sucursales $Sucursale)
     {
-        $Sucursale->update($request->all());
+        $Sucursale->Nombre=$request->Nombre;
+        $Sucursale->Descripcion=$request->Descripcion;
+        $Sucursale->Telefono=$request->Telefono;
+        $Sucursale->Direccion=$request->Direccion;
+        $Sucursale->Url=$request->Url->store('storage');
+        $Sucursale->save();
+
+        $request->file('Url')->store('public');
+        
+        $Sucursale->update();
         return redirect()->route('Sucursales.index')->with('mensaje', 'La sucursal se ha actualizado correctamente');
     }
 
