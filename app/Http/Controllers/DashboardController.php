@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Sucursales;
 
 class DashboardController extends Controller
 {
@@ -11,7 +12,7 @@ class DashboardController extends Controller
         if(Auth::user()->hasRole('user')){
             return view('userdash');
         }elseif(Auth::user()->hasRole('administrator')){
-            return view('admindash');
+            return view('admindash1');
         }elseif(Auth::user()->hasRole('superadministrator')){
             return view('superdash');
         }
