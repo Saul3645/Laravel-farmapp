@@ -38,7 +38,7 @@
                                 <td>{{ $sucursales->Telefono}}</td>
                                 <td>{{ $sucursales->Direccion }}</td>
                                 
-                                <td><a href="/{{$sucursales->url}}">Descargar archivo</a><td>
+                                <td><a href="/{{$sucursales->Url}}">Descargar archivo</a><td>
                               </tr>
                             @endforeach
                             </tbody>

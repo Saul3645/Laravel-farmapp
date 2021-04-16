@@ -47,7 +47,7 @@ class SucursalesController extends Controller
         $datos->Direccion=$request->Direccion;
         $datos->Url=$request->Url->store('storage');
         $datos->save();
-        $request->file('file')->store('public');
+        $request->file('Url')->store('public');
         return redirect()->route('sucursales.index')->with('mensaje', 'Solicitud Registrada');
     }
 
