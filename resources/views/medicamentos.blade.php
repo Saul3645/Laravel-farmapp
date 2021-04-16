@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('titulo')
-<title>Medicamentos</title>
+Medicamentos
 @endsection
 <link rel="stylesheet" type="text/css" href="css/medicamentos.css">
 @section ('contenido')
