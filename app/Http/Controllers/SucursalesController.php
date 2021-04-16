@@ -57,10 +57,10 @@ class SucursalesController extends Controller
      * @param  \App\Models\Sucursales  $sucursales
      * @return \Illuminate\Http\Response
      */
-    public function show(Sucursales $sucursales)
+    public function show(Sucursales $Sucursale)
     {
         //
-        return view('mostrar_farmacia',compact('sucursales'));
+        return view('mostrar_farmacia',compact('sucursal'));
     }
 
     /**
@@ -69,9 +69,9 @@ class SucursalesController extends Controller
      * @param  \App\Models\Sucursales  $sucursales
      * @return \Illuminate\Http\Response
      */
-    public function edit(Sucursales $sucursales)
+    public function edit(Sucursales $Sucursale)
     {
-        //
+        return view('edit', compact('Sucursale'));
     }
 
     /**
@@ -81,9 +81,10 @@ class SucursalesController extends Controller
      * @param  \App\Models\Sucursales  $sucursales
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Sucursales $sucursales)
+    public function update(Request $request, Sucursales $Sucursale)
     {
-        //
+        $Sucursale->update($request->all());
+        return redirect()->route('Sucursales.index')->with('mensaje', 'La sucursal se ha actualizado correctamente');
     }
 
     /**
@@ -92,10 +93,10 @@ class SucursalesController extends Controller
      * @param  \App\Models\Sucursales  $sucursales
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Sucursales $sucursales)
+    public function destroy(Sucursales $Sucursale)
     {
         //
-        $sucursales->delete();
+        $Sucursale->delete();
         return back()->with('mensaje','La sucursal ha sido eliminado correctamente');
     }
 }

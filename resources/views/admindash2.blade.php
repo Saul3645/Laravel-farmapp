@@ -31,19 +31,28 @@
                                 <th scope="col">Sucursal</th>
                                 <th scope="col">Imagen</th>
                                 <th scope="col">Vista Imagen</th>
+                                <th scope="col">Acciones</th>
                               </tr>
                             </thead>
                             <tbody>
-                            @foreach ($medicamentos as $medicamentos)
+                            @foreach ($medicamentos as $Medicamento)
                               <tr>
-                                <td>{{ $medicamentos->id }}</td>
-                                <td>{{ $medicamentos->Nombre }}</td>
-                                <td>{{ $medicamentos->Descripcion }}</td>
-                                <td>{{ $medicamentos->Caracteristicas}}</td>
-                                <td>{{ $medicamentos->Precio }}</td>
-                                <td>{{ $medicamentos->sucursales_id }}</td>
-                                <td><a href="/{{$medicamentos->Url}}">Descargar archivo</a><td>
-                                <img src="{{ asset($medicamentos->Url)}}" alt="imagen" width="200">
+                                <td>{{ $Medicamento->id }}</td>
+                                <td>{{ $Medicamento->Nombre }}</td>
+                                <td>{{ $Medicamento->Descripcion }}</td>
+                                <td>{{ $Medicamento->Caracteristicas}}</td>
+                                <td>{{ $Medicamento->Precio }}</td>
+                                <td>{{ $Medicamento->sucursales_id }}</td>
+                                <td><a href="/{{$Medicamento->Url}}">Descargar archivo</a><td>
+                                <img src="{{ asset($Medicamento->Url)}}" alt="imagen" width="200">
+                                <td>
+                                    <a href="{{route('Medicamentos.edit',$Medicamento->id)}}" class="btn btn-info ">Editar</a>
+                                    <form action="{{ route('Medicamentos.destroy',$Medicamento->id)}}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="btn btn-danger" type="submit">ELIMINAR</button>
+                                    </form>
+                                </td>
                               </tr>
                             @endforeach
                             </tbody>

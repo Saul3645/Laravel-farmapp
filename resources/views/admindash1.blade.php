@@ -34,18 +34,19 @@
                               </tr>
                             </thead>
                             <tbody>
-                            @foreach ($sucursales as $sucursales)
+                            @foreach ($sucursales as $Sucursale)
                               <tr>
-                                <td>{{ $sucursales->id }}</td>
-                                <td>{{ $sucursales->Nombre }}</td>
-                                <td>{{ $sucursales->Descripcion }}</td>
-                                <td>{{ $sucursales->Telefono}}</td>
-                                <td>{{ $sucursales->Direccion }}</td>
-                                <td><a href="/{{$sucursales->Url}}">Descargar archivo</a><td>
-                                <img src="{{ asset($sucursales->Url)}}" alt="imagen" width="200">
-                                <td><a href="{{ route('sucursales.show',$sucursales->id)}}">Ver ficha</a><td>
+                                <td>{{ $Sucursale->id }}</td>
+                                <td>{{ $Sucursale->Nombre }}</td>
+                                <td>{{ $Sucursale->Descripcion }}</td>
+                                <td>{{ $Sucursale->Telefono}}</td>
+                                <td>{{ $Sucursale->Direccion }}</td>
+                                <td><a href="/{{$Sucursale->Url}}">Descargar archivo</a><td>
+                                <img src="{{ asset($Sucursale->Url)}}" alt="imagen" width="200">
+                                <td><a href="{{ route('Sucursales.show',$Sucursale->id)}}">Ver ficha</a><td>
                                 <td>
-                                    <form action="{{ route('sucursales.destroy',$sucursales->id)}}" method="post">
+                                    <a href="{{route('Sucursales.edit',$Sucursale->id)}}" class="btn btn-info ">Editar</a>
+                                    <form action="{{ route('Sucursales.destroy',$Sucursale->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
                                         <button class="btn btn-danger" type="submit">ELIMINAR</button>

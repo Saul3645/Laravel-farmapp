@@ -60,7 +60,7 @@ class MedicamentosController extends Controller
      * @param  \App\Models\Medicamentos  $medicamentos
      * @return \Illuminate\Http\Response
      */
-    public function show(Medicamentos $medicamentos)
+    public function show(Medicamentos $Medicamento)
     {
         //
     }
@@ -71,9 +71,9 @@ class MedicamentosController extends Controller
      * @param  \App\Models\Medicamentos  $medicamentos
      * @return \Illuminate\Http\Response
      */
-    public function edit(Medicamentos $medicamentos)
+    public function edit(Medicamentos $Medicamento)
     {
-        //
+        return view('editm', compact('Medicamento'));
     }
 
     /**
@@ -83,9 +83,10 @@ class MedicamentosController extends Controller
      * @param  \App\Models\Medicamentos  $medicamentos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medicamentos $medicamentos)
+    public function update(Request $request, Medicamentos $Medicamento)
     {
-        //
+        $Medicamento->update($request->all());
+        return redirect()->route('Medicamentos.index')->with('mensaje', 'El medicamento se ha actualizado correctamente');
     }
 
     /**
@@ -94,8 +95,9 @@ class MedicamentosController extends Controller
      * @param  \App\Models\Medicamentos  $medicamentos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medicamentos $medicamentos)
+    public function destroy(Medicamentos $Medicamento)
     {
-        //
+        $Medicamento->delete();
+        return back()->with('mensaje','El medicamento ha sido eliminado correctamente');
     }
 }
