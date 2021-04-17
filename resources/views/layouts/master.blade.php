@@ -34,7 +34,7 @@
                         <a class="nav-link" href=" {{ route('Farmacias.index') }}">Farmacias</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/medicamentos">Medicamentos</a>
+                        <a class="nav-link" href=" {{ route('Medicamento.index') }}">Medicamentos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -43,7 +43,6 @@
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <a class="dropdown-item" href="/login">Perfil</a>
-                            <a class="dropdown-item" href=" {{ route('Sucursales.index') }}">Another action</a>
                         </div>
                     </li>
                 </ul>
@@ -58,10 +57,10 @@
         <div class="footer">
             <div class="footer__second">
                 <h6 class="footer__h6">¿Cómo funciona?</h6>
-                <h6 class="footer__h6">Farmacias</h6>
+                <a class="footer__a"href=" {{ route('Farmacias.index') }}">Farmacias</a>
                 <h6 class="footer__h6">Medicamentos</h6>
                 <h6 class="footer__h6">Inicia Sesión</h6>
-                <h6 class="footer__h6">Admin</h6>
+                
                 <div>
                 </div>
                 <br>

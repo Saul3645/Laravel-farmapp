@@ -18,49 +18,31 @@ Medicamentos
         </div>
     </div>
     <!--Productos-->
-    <div class="container">
-        <h1 class="hola">Medicamentos Disponibles</h1>
-        <div class="row justify-content-center">
-            <div class="col-md-4 py-3">
-                <div class="card shadow" style="width: 18rem;">
-                    <div class="inner">
-                        <img src="img/img-14.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-success">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-        
+    <h1 class="medicamentos__h1">Medicamentos Disponibles</h1>
+    <div class="container__medicamentos">
 
-            <div class="col-md-4 py-3">
-                <div class="card shadow" style="width: 18rem;">
+        @foreach ($medicamentos as $Medicamento)
+        <div class="tarjetas">
+            <div class="col-md">
+                <div class="card shadow" style="width: 18rem; height: 30rem;">
                     <div class="inner">
-                        <img src="img/img-14.jpg" class="card-img-top" alt="...">
+                        <img src="{{ asset($Medicamento->Url)}}" class="card-img-top" alt="{{ $Medicamento->Nombre}}" width="200" height="192">
                     </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-success">Go somewhere</a>
+                        {{-- <h5 class="card-title">{{ $sucursales->Nombre }}</h5> --}}
+                        <h5 class="card-title">"{{ $Medicamento->Nombre }}"</h5>
+                        <p class="card-text">{{ $Medicamento->Descripcion }}.</p>
+                        <p class="card-text">{{ $Medicamento->Caracteristicas }}.</p>
+                        <p class="card-text">{{ $Medicamento->Precio }}.</p>
+                        <p class="card-text">{{ $Medicamento->sucursales_id}}.</p>
+                        <br>
+                        <a href="{{ route('Medicamentos.show',$Medicamento->id)}}" class="btn btn-success">Ver {{ $Medicamento->Nombre }}</a>
                     </div>
                 </div>
             </div>
-
-            <div class="col-md-4 py-3">
-                <div class="card shadow" style="width: 18rem;">
-                    <div class="inner">
-                        <img src="img/img-14.jpg" class="card-img-top" alt="...">
-                    </div>
-                    <div class="card-body text-center">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        <a href="#" class="btn btn-success">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+            {{-- @endforeach --}}
         </div>
+        @endforeach
     </div>
     <br>
 @endsection

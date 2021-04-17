@@ -46,11 +46,12 @@
                                 <td><a href="/{{$Medicamento->Url}}">Descargar archivo</a><td>
                                 <img src="{{ asset($Medicamento->Url)}}" alt="imagen" width="200">
                                 <td>
+                                    <td><a href="{{ route('Medicamentos.show',$Medicamento->id)}}" class="btn btn-warning">Ver Ficha</a>
                                     <a href="{{route('Medicamentos.edit',$Medicamento->id)}}" class="btn btn-info ">Editar</a>
                                     <form action="{{ route('Medicamentos.destroy',$Medicamento->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger" type="submit">Eliminar</button>
                                     </form>
                                 </td>
                               </tr>

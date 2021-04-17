@@ -25,9 +25,9 @@ Farmacias
     @foreach ($sucursales as $Sucursale)
     <div class="tarjetas">
         <div class="col-md">
-            <div class="card shadow" style="width: 18rem;">
+            <div class="card shadow" style="width: 18rem; height: 30rem;">
                 <div class="inner">
-                    <img src="{{ asset($Sucursale->Url)}}" class="card-img-top" alt="..." width="200" height="192">
+                    <img src="{{ asset($Sucursale->Url)}}" class="card-img-top" alt="{{ $Sucursale->Nombre }}" width="200" height="192">
                 </div>
                 <div class="card-body text-center">
                     {{-- <h5 class="card-title">{{ $sucursales->Nombre }}</h5> --}}
@@ -35,7 +35,7 @@ Farmacias
                     <p class="card-text">{{ $Sucursale->Descripcion }}.</p>
                     <p class="card-text">{{ $Sucursale->Telefono }}.</p>
                     <p class="card-text">{{ $Sucursale->Direccion }}.</p>
-                    
+                    <br>
                     <a href="{{ route('Sucursales.show',$Sucursale->id)}}" class="btn btn-success">Ver {{ $Sucursale->Nombre }}</a>
                 </div>
             </div>

@@ -63,6 +63,7 @@ class MedicamentosController extends Controller
     public function show(Medicamentos $Medicamento)
     {
         //
+        return view('medicamento_informacion',compact('Medicamento'));
     }
 
     /**

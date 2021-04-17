@@ -17,7 +17,7 @@
         <p>Descripción: {{ $Sucursale->Descripcion}}</p>
         <p>Teléfono: {{ $Sucursale->Telefono}}</p>
         <p>Dirección: {{ $Sucursale->Direccion}}</p>
-        <p>Logo: {{ $Sucursale->Url}}</p>
+        {{-- <p>Logo: {{ $Sucursale->Url}}</p> --}}
         {{-- <img src="{{ asset($Sucursale->Url)}}" alt="imagen" width="200"> --}}
 </div>
 @endsection
