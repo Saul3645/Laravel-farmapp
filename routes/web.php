@@ -63,5 +63,7 @@ Route::resource('Farmacias', 'App\Http\Controllers\FarmaciasController');
 
 Route::resource('Medicamento', 'App\Http\Controllers\ProductosController');
 
+Route::resource('Comparador', 'App\Http\Controllers\ComparadorController');
+
 
 

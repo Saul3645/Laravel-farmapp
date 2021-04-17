@@ -36,6 +36,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href=" {{ route('Medicamento.index') }}">Medicamentos</a>
                     </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href=" {{ route('Comparador.index') }}">Comparador</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
