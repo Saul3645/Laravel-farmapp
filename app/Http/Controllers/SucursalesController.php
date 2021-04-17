@@ -60,7 +60,7 @@ class SucursalesController extends Controller
     public function show(Sucursales $Sucursale)
     {
         //
-        return view('mostrar_farmacia',compact('Sucursale'));
+        return view('farmacias_informacion',compact('Sucursale'));
     }
 
     /**

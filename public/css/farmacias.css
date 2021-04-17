@@ -2,10 +2,15 @@
     color: #000;
     font: size 10px;
     text-align: center;
+    padding-top: 10px;
 }
 
-.container{
-    
+.container__farmacias{
+    overflow: hidden;
+    padding: 20px 20px 20px;
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
 }
 
 .inner{
@@ -28,5 +33,32 @@
 
 .card{
     float: left;
-    overflow: hidden;
+}
+
+.tarjetas{
+    padding: 0px 10px 20px;
+}
+
+.farmacia__banner{
+    background-image: no-repeat;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    background-image: url(https://img.freepik.com/foto-gratis/vista-aerea-capsulas-sobre-fondo-blanco-azul_23-2147867063.jpg?ext=jpg&size=626);
+}
+
+.farmacias__info__h1{
+    color: #000;
+}
+
+.farmacia__perfil{
+    
+}
+
+.farmacias__informacion{
+    padding: 20px 20px 20px 20px;
+}
+
+.farmacias__info__h1{
+    text-align:center;
 }

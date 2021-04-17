@@ -27,9 +27,9 @@ Route::get('/medicamentos', function () {
     return view('medicamentos');
 });
 
-Route::get('/farmacias', function () {
-    return view('farmacias');
-});
+// Route::get('/farmacias', function () {
+//     return view('farmacias');
+// });
 
 Route::get('/create', function () {
     return view('gestionar');
@@ -58,6 +58,8 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function() {
 });
 
 require __DIR__.'/auth.php';
+
+Route::resource('Farmacias', 'App\Http\Controllers\FarmaciasController');
 
 
 

@@ -31,7 +31,7 @@
                         <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="/farmacias">Farmacias</a>
+                        <a class="nav-link" href=" {{ route('Farmacias.index') }}">Farmacias</a>
                     </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="/medicamentos">Medicamentos</a>
