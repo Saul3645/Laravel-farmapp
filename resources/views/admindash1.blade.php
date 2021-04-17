@@ -43,15 +43,13 @@
                                 <td>{{ $Sucursale->Direccion }}</td>
                                 <td><a href="/{{$Sucursale->Url}}">Descargar archivo</a><td>
                                 <img src="{{ asset($Sucursale->Url)}}" alt="imagen" width="200">
-                                <td><a href="{{ route('Sucursales.show',$Sucursale->id)}}">Ver ficha</a><td>
-                                <td>
+                                <td><a href="{{ route('Sucursales.show',$Sucursale->id)}}" class="btn btn-warning">Ver Ficha</a>
                                     <a href="{{route('Sucursales.edit',$Sucursale->id)}}" class="btn btn-info ">Editar</a>
                                     <form action="{{ route('Sucursales.destroy',$Sucursale->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">ELIMINAR</button>
+                                        <button class="btn btn-danger" type="submit">Eliminar</button><td>
                                     </form>
-                                </td>
                               </tr>
                             @endforeach
                             </tbody>
