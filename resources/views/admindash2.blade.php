@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 <link rel="stylesheet" href="../css/gestionar.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -45,15 +46,13 @@
                                 <td>{{ $Medicamento->sucursales_id }}</td>
                                 <td><a href="/{{$Medicamento->Url}}">Descargar archivo</a><td>
                                 <img src="{{ asset($Medicamento->Url)}}" alt="imagen" width="200">
-                                <td>
-                                    <td><a href="{{ route('Medicamentos.show',$Medicamento->id)}}" class="btn btn-warning">Ver Ficha</a>
-                                    <a href="{{route('Medicamentos.edit',$Medicamento->id)}}" class="btn btn-info ">Editar</a>
+                                    <td><a href="{{ route('Medicamentos.show',$Medicamento->id)}}" class="btn btn-warning"><i class="far fa-eye"></i>Ver Ficha</a>
+                                    <a href="{{route('Medicamentos.edit',$Medicamento->id)}}" class="btn btn-info "><i class="far fa-edit"></i>Editar</a>
                                     <form action="{{ route('Medicamentos.destroy',$Medicamento->id)}}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" type="submit">Eliminar</button>
+                                        <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i>Eliminar</button>
                                     </form>
-                                </td>
                               </tr>
                             @endforeach
                             </tbody>

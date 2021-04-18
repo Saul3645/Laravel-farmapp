@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('titulo')
-    Medicamentos
+    Comparador
 @endsection
 <link rel="stylesheet" type="text/css" href="css/medicamentos.css">
 @section('contenido')
@@ -21,11 +21,9 @@
     <div class="container">
         <br />
         <form class="input-group rounded" method="GET" action="{{route('Comparador.index')}}">
-            <input type="text" class="form-control rounded" name="search" placeholder="Search" aria-label="Search"
+            <input type="text" class="form-control rounded" name="search" placeholder="¿Qué Medicamento Deseas Comparar?" aria-label="Search"
               aria-describedby="search-addon" value="{{ request()->query('search')}}"/>
-            <span class="input-group-text border-0" id="search-addon">
-              <i class="fas fa-search"></i>
-            </span>
+            <button class="btn btn-outline-info" value="{{ request()->query('search')}}" type="input"><i class="fas fa-search"></i>Realizar Búsqueda</button>
         </form>
     </div>
 
