@@ -4,7 +4,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard for Admin') }}
+            {{ __('Farmacias') }}
         </h2>
     </x-slot>
 
@@ -13,52 +13,53 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     Lista de farmacias
+                    <div class="py-12">
+                        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                                <div class="formulario__sucursal">
+                                    <table class="table table-hover">
+                                        <thead>
+                                          <tr>
+                                            
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Descripción</th>
+                                            <th scope="col">Telefono</th>
+                                            <th scope="col">Direccion</th>
+                                            <th scope="col">Imagen</th>
+                                            <th scope="col">Vista Imagen</th>
+                                            <th scope="col">Acciónes</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                        @foreach ($sucursales as $Sucursale)
+                                          <tr>
+                                            
+                                            <td>{{ $Sucursale->Nombre }}</td>
+                                            <td>{{ $Sucursale->Descripcion }}</td>
+                                            <td>{{ $Sucursale->Telefono}}</td>
+                                            <td>{{ $Sucursale->Direccion }}</td>
+                                            <td><a href="/{{$Sucursale->Url}}">Descargar archivo</a><td>
+                                            <img src="{{ asset($Sucursale->Url)}}" alt="imagen" width="200">
+                                            <td><a href="{{ route('Sucursales.show',$Sucursale->id)}}" class="btn btn-warning"><i class="far fa-eye"></i></a>
+                                                <a href="{{route('Sucursales.edit',$Sucursale->id)}}" class="btn btn-info"><i class="far fa-edit"></i></a>
+                                                <form action="{{ route('Sucursales.destroy',$Sucursale->id)}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i></button><td>
+                                                </form>
+                                          </tr>
+                                        @endforeach
+                                        </tbody>
+                                      </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                    <div class="formulario__sucursal">
-                        <table class="table table-hover">
-                            <thead>
-                              <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Descripción</th>
-                                <th scope="col">Telefono</th>
-                                <th scope="col">Direccion</th>
-                                <th scope="col">Imagen</th>
-                                <th scope="col">Vista Imagen</th>
-                                <th scope="col">Acciónes</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                            @foreach ($sucursales as $Sucursale)
-                              <tr>
-                                <td>{{ $Sucursale->id }}</td>
-                                <td>{{ $Sucursale->Nombre }}</td>
-                                <td>{{ $Sucursale->Descripcion }}</td>
-                                <td>{{ $Sucursale->Telefono}}</td>
-                                <td>{{ $Sucursale->Direccion }}</td>
-                                <td><a href="/{{$Sucursale->Url}}">Descargar archivo</a><td>
-                                <img src="{{ asset($Sucursale->Url)}}" alt="imagen" width="200">
-                                <td><a href="{{ route('Sucursales.show',$Sucursale->id)}}" class="btn btn-warning"><i class="far fa-eye"></i>Ver Ficha</a>
-                                    <a href="{{route('Sucursales.edit',$Sucursale->id)}}" class="btn btn-info"><i class="far fa-edit"></i>Editar</a>
-                                    <form action="{{ route('Sucursales.destroy',$Sucursale->id)}}" method="post">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btn btn-danger" type="submit"><i class="far fa-trash-alt"></i>Eliminar</button><td>
-                                    </form>
-                              </tr>
-                            @endforeach
-                            </tbody>
-                          </table>
-                    </div>
-                </div
-            </div>
-        </div>
+        
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

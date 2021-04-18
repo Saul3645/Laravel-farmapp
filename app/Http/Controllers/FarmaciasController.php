@@ -17,7 +17,7 @@ class FarmaciasController extends Controller
     public function index()
     {
         //
-        $sucursales= Sucursales::simplePaginate(4);
+        $sucursales= Sucursales::simplePaginate(8);
         
         return view('farmacias',compact('sucursales'));
 
