@@ -12,6 +12,7 @@
     <img src="{{ asset($Sucursale->Url)}}" class="rounded-circle" alt="..." width="200px" height="200px">
 </div>
 <div class="farmacias__informacion">
+    <button class="btn btn-warning "><a href="javascript: history.go(-1)" ><i class="fas fa-arrow-left"></i></a></button>
     <h1 class="farmacias__info__h1">Acerca De: </h1>
     <h1 class="farmacias__info__h1">{{ $Sucursale->Nombre }}</h1>
         
