@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ url('/') }}">
-                        <x-application-logo class="block h-10 w-auto fill-current text-gray-600" />
+                       FARMAPP
                     </a>
                 </div>
 
@@ -28,7 +28,7 @@
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                         <x-nav-link :href="route('dashboard.gestionar')"
                             :active="request()->routeIs('dashboard.gestionar')">
-                            {{ __('Gestionar Medicamentos Y Farmacias') }}
+                            {{ __('Gestionar') }}
                         </x-nav-link>
                     </div>
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -114,7 +114,7 @@
             <div class="pt-2 pb-3 space-y-1">
                 <x-responsive-nav-link :href="route('dashboard.gestionar')"
                     :active="request()->routeIs('dashboard.gestionar')">
-                    {{ __('Gestionar medicamentos') }}
+                    {{ __('Gestionar') }}
                 </x-responsive-nav-link>
             </div>
             <div class="pt-2 pb-3 space-y-1">

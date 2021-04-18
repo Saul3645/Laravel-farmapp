@@ -47,23 +47,26 @@ Route::group(['middleware' => ['auth']], function() {
 // for users
 Route::group(['middleware' => ['auth', 'role:user']], function() { 
     Route::get('/dashboard/myprofile', 'App\Http\Controllers\DashboardController@myprofile')->name('dashboard.myprofile');
-    
+    Route::resource('Comparador', 'App\Http\Controllers\ComparadorController');
 });
 
 // for admin
 Route::group(['middleware' => ['auth', 'role:administrator']], function() { 
     Route::get('/dashboard/gestionar', 'App\Http\Controllers\DashboardController@gestionar')->name('dashboard.gestionar');
     Route::resource('Sucursales', 'App\Http\Controllers\SucursalesController');
-    Route::resource('Medicamentos', 'App\Http\Controllers\MedicamentosController');//Medicamentos Name del route Medicamentos.store 
+    Route::resource('Comparador', 'App\Http\Controllers\ComparadorController');
+    //Medicamentos Name del route Medicamentos.store 
 });
 
 require __DIR__.'/auth.php';
+
+Route::resource('Medicamentos', 'App\Http\Controllers\MedicamentosController');
 
 Route::resource('Farmacias', 'App\Http\Controllers\FarmaciasController');
 
 Route::resource('Medicamento', 'App\Http\Controllers\ProductosController');
 
-Route::resource('Comparador', 'App\Http\Controllers\ComparadorController');
+
 
 
 

@@ -34,9 +34,6 @@
                         <a class="nav-link" href=" {{ route('Farmacias.index') }}">Farmacias</a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href=" {{ route('Medicamento.index') }}">Medicamentos</a>
-                    </li>
-                    <li class="nav-item active">
                         <a class="nav-link" href=" {{ route('Comparador.index') }}">Comparador</a>
                     </li>
                     <li class="nav-item dropdown">

@@ -33,17 +33,15 @@
         @forelse ($medicamentos as $Medicamento)
         <div class="tarjetas">
             <div class="col-md">
-                <div class="card shadow" style="width: 18rem; height: 30rem;">
+                <div class="card shadow" style="width: 18rem; height: 25rem;">
                     <div class="inner">
                         <img src="{{ asset($Medicamento->Url)}}" class="card-img-top" alt="{{ $Medicamento->Nombre}}" width="200" height="192">
                     </div>
                     <div class="card-body text-center">
                         {{-- <h5 class="card-title">{{ $sucursales->Nombre }}</h5> --}}
                         <h5 class="card-title">"{{ $Medicamento->Nombre }}"</h5>
-                        <p class="card-text">{{ $Medicamento->Descripcion }}.</p>
                         <p class="card-text">{{ $Medicamento->Caracteristicas }}.</p>
                         <p class="card-text">${{ $Medicamento->Precio }}.</p>
-                        <p class="card-text">{{ $Medicamento->sucursales_id}}.</p>
                         <br>
                         <a href="{{ route('Medicamentos.show',$Medicamento->id)}}" class="btn btn-success">Ver {{ $Medicamento->Nombre }}</a>
                     </div>

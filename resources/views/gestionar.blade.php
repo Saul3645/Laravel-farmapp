@@ -52,7 +52,7 @@
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="Url" value="{{ old('Url') }}"
                                         aria-describedby="inputGroupFileAddon01">
-                                    <label class="custom-file-label" for="inputGroupFile01">Elegir file....</label>
+                                    <label class="custom-file-label" for="inputGroupFile01">Elegir imagen....</label>
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary"><i class="fas fa-laptop-medical"></i>Registrar</button>
@@ -97,11 +97,11 @@
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="Url" value="{{ old('Url') }}"
                                         aria-describedby="inputGroupFileAddon01" data-show-preview="true">
-                                    <label class="custom-file-label" for="inputGroupFile01">Elegir file....</label>
+                                    <label class="custom-file-label" for="inputGroupFile01">Elegir imagen....</label>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="exampleFormControlSelect1">Farmacias ID</label>
+                                <label for="exampleFormControlSelect1">Farmacia:</label>
                                 <select class="form-control" name="sucursales_id">
                                     @foreach ($farmacias->get() as $index => $farmacia)
                                         <option value="{{$index}}"{{old("sucursales_id") == $index ? 'selected' : ''}}>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sucursales;
+use App\Models\Medicamentos;
 use Illuminate\Http\Request;
 use App\Http\Requests\Sucursales1Request; // no olvidar importar la ruta
 
@@ -16,8 +17,12 @@ class FarmaciasController extends Controller
     public function index()
     {
         //
-        $sucursales= Sucursales::all();
+        $sucursales= Sucursales::simplePaginate(4);
+        
         return view('farmacias',compact('sucursales'));
+
+        
+        
     }
 
     /**

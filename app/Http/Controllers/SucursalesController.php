@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Sucursales;
 use Illuminate\Http\Request;
 use App\Http\Requests\Sucursales1Request; // no olvidar importar la ruta
+use App\Models\Medicamentos;
+use Illuminate\Support\Facades\DB;
 
 class SucursalesController extends Controller
 {
@@ -17,6 +19,7 @@ class SucursalesController extends Controller
     {
         //
         $sucursales= Sucursales::all();
+        
         return view('admindash1',compact('sucursales'));
     }
 
@@ -55,12 +58,16 @@ class SucursalesController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\Sucursales  $sucursales
+     * @param  \App\Models\Medicamentos  
      * @return \Illuminate\Http\Response
      */
     public function show(Sucursales $Sucursale)
     {
         //
-        return view('farmacias_informacion',compact('Sucursale'));
+        $medicamentos= DB::table('medicamentos')
+            ->where('sucursales_id', '=', "{$Sucursale->id}")
+            ->get();
+        return view('farmacias_informacion',compact('Sucursale', 'medicamentos'));
     }
 
     /**
