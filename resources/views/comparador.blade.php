@@ -53,12 +53,20 @@
             </div>
             {{-- @endforeach --}}
         </div>
+        
         @empty
         <p class="text-center">
             Ningun resultado para <strong>{{request()->query('search')}}</strong>    
         </p> 
         
         @endforelse
+        
+        
+        
     </div>
-
+    
+    <div class="container__">
+        {{$medicamentos->appends(['search' => request()-> query('search')])->links()}}
+    </div>
+    <br>
 @endsection

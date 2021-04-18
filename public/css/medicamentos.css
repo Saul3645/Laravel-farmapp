@@ -7,7 +7,8 @@
 
 .container__medicamentos{
     overflow: hidden;
-    padding: 20px 20px 20px;
+    margin-left: 60px;
+    padding: 20px;
     display: flex;
     flex-direction:row;
     flex-wrap: wrap;
@@ -38,4 +39,8 @@
 
 .tarjetas{
     padding: 0px 10px 20px;
+}
+
+.container__{
+    padding-left: 630px;
 }
