@@ -13,7 +13,7 @@
 <div class="farmacias__informacion">
     <h1 class="farmacias__info__h1">Acerca De: {{ $Medicamento->Nombre }}</h1>
         
-        <h2>Sucursal: {{ $Medicamento->Nombre}}</h2>
+        <h2>Medicamento: {{ $Medicamento->Nombre}}</h2>
         <p>Descripción: {{ $Medicamento->Descripcion}}</p>
         <p>Caracteristicas: {{ $Medicamento->Caracteristicas}}</p>
         <p>Precio: {{ $Medicamento->Precio}}</p>
