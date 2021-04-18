@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-<link rel="stylesheet" href="../css/gestionar.css" type="text/css">
-
+<link rel="stylesheet" href="../../css/gestionar.css" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
@@ -12,7 +12,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <h1 class="Formulario__Titulo">Editar Medicamento</h1>
+                    <h1 class="Formulario__Titulo">Editar Medicamento: {{$Medicamento->Nombre}}</h1>
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
                         <form class="formulario__registro" action={{ route('Medicamentos.update', $Medicamento->id) }} method="POST" enctype="multipart/form-data">
                             @csrf
                             {{ method_field('PATCH') }}
-                            <h1 class="Formulario__Titulo">Registro de Medicamentos</h1>
+                            <h1 class="Formulario__Titulo">{{$Medicamento->Nombre}}</h1>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nombre Del Medicamento:</label>
                                 <input type="text" class="form-control" name="Nombre" value="{{ old('Nombre', $Medicamento->Nombre) }}" placeholder="Ingrese Un Nombre" aria-describedby="emailHelp">
