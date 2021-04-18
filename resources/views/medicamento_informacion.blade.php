@@ -11,7 +11,7 @@
     <img src="{{ asset($Medicamento->Url)}}" class="rounded-circle" alt="..." width="200px" height="200px">
 </div>
 <div class="farmacias__informacion">
-    <button class="btn btn-warning "><a href="javascript: history.go(-1)" ><i class="fas fa-arrow-left"></i></a></button>   
+    <input type="button" class="btn btn-warning " value="Volver" onClick="history.go(-1);">
     <h1 class="farmacias__info__h1">Acerca De: {{ $Medicamento->Nombre }}</h1>
         
         <h2>Medicamento: {{ $Medicamento->Nombre}}</h2>
