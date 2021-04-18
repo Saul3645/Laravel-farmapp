@@ -24,7 +24,7 @@
                         <table class="table table-hover">
                             <thead>
                               <tr>
->                                <th scope="col">ID</th>
+                                <th scope="col">ID</th>
                                 <th scope="col">Nombre</th>
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Telefono</th>
