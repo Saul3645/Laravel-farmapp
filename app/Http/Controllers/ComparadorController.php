@@ -12,7 +12,7 @@ class ComparadorController extends Controller
         $search = request()->query('search');
 
         if($search){
-            $medicamentos = Medicamentos::where('Nombre', 'LIKE', "%{$search}%")->simplePaginate(35);
+            $medicamentos = Medicamentos::where('Nombre', 'LIKE', "%{$search}%")->orderBy('Precio','ASC')->simplePaginate(35);
         }else{
             $medicamentos = Medicamentos::all();
         }
