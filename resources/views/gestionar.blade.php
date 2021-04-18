@@ -96,7 +96,7 @@
                             <div class="input-group mb-3">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" name="Url" value="{{ old('Url') }}"
-                                        aria-describedby="inputGroupFileAddon01">
+                                        aria-describedby="inputGroupFileAddon01" data-show-preview="true">
                                     <label class="custom-file-label" for="inputGroupFile01">Elegir file....</label>
                                 </div>
                             </div>
