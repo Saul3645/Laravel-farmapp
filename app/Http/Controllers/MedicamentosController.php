@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Medicamentos;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\MedicamentosRequest; // no olvidar importar la ruta
+use App\Models\Sucursales;
 
 class MedicamentosController extends Controller
 {
@@ -63,7 +65,8 @@ class MedicamentosController extends Controller
     public function show(Medicamentos $Medicamento)
     {
         //
-        return view('medicamento_informacion',compact('Medicamento'));
+        $farmacias = Sucursales::all();
+        return view('medicamento_informacion',compact('Medicamento', 'farmacias'));
     }
 
     /**

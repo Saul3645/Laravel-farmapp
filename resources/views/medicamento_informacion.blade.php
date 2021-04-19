@@ -26,7 +26,12 @@
         <p>{{ $Medicamento->Precio }}</p>
         <br>
         <h4>Sucursal: </h4>
-        <p> {{ $Medicamento->sucursales_id }}</p>
+        @foreach ($farmacias as $farmacia)
+            @if($Medicamento->sucursales_id == $farmacia->id)
+                <p> {{ $farmacia->Nombre }}</p>
+            @endif
+        @endforeach
+       
     </div>
 
     {{-- <p>Logo: {{ $Sucursale->Url}}</p> --}}
