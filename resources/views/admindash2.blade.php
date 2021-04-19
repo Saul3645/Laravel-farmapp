@@ -39,7 +39,7 @@
                                             <td>{{ $Medicamento->Nombre }}</td>
                                             <td>{{ $Medicamento->Descripcion }}</td>
                                             <td>{{ $Medicamento->Caracteristicas}}</td>
-                                            <td>{{ $Medicamento->Precio }}</td>
+                                            <td>${{ $Medicamento->Precio }}</td>
                                             <td>{{ $Medicamento->sucursales_id }}</td>
                                             <td><a href="/{{$Medicamento->Url}}">Descargar archivo</a><td>
                                             <img src="{{ asset($Medicamento->Url)}}" alt="imagen" width="200">

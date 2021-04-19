@@ -42,19 +42,20 @@ Route::get('/create1', function () {
 //auth route for both 
 Route::group(['middleware' => ['auth']], function() { 
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')->name('dashboard');
+    Route::resource('Sucursales', 'App\Http\Controllers\SucursalesController');
+    Route::resource('Comparador', 'App\Http\Controllers\ComparadorController');
 });
 
 // for users
 Route::group(['middleware' => ['auth', 'role:user']], function() { 
     Route::get('/dashboard/myprofile', 'App\Http\Controllers\DashboardController@myprofile')->name('dashboard.myprofile');
-    Route::resource('Comparador', 'App\Http\Controllers\ComparadorController');
+    
 });
 
 // for admin
 Route::group(['middleware' => ['auth', 'role:administrator']], function() { 
     Route::get('/dashboard/gestionar', 'App\Http\Controllers\DashboardController@gestionar')->name('dashboard.gestionar');
-    Route::resource('Sucursales', 'App\Http\Controllers\SucursalesController');
-    Route::resource('Comparador', 'App\Http\Controllers\ComparadorController');
+    
     //Medicamentos Name del route Medicamentos.store 
 });
 

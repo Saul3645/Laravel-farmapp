@@ -18,7 +18,7 @@
         </div>
         <br>
         
-
+        @inject('farmacias', 'App\Services\Farmacias')
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -50,16 +50,18 @@
                                   <label class="custom-file-label" for="inputGroupFile01">Elegir file....</label>
                                 </div>
                             </div>
-                              <div class="form-group">
-                                <label for="exampleFormControlSelect1">Farmacias ID</label>
-                                <select class="form-control"name="sucursales_id" value="{{ old('sucursales_id', $Medicamento->sucursales_id) }}">
-                                  <option>1</option>
-                                  <option>2</option>
-                                  <option>3</option>
-                                  <option>4</option>
-                                  <option>5</option>
+                            <div class="form-group">
+                                <label for="exampleFormControlSelect1">Farmacia:</label>
+                                <select class="form-control" name="sucursales_id">
+                                    @foreach ($farmacias->get() as $index => $farmacia)
+                                        <option value="{{$index}}"{{old("sucursales_id") == $index ? 'selected' : ''}}>
+                                            {{$farmacia}}
+                                        </option>
+                                    @endforeach
+
+
                                 </select>
-                              </div>
+                            </div>
                             <button type="submit" class="btn btn-dark"><i class="fas fa-marker"></i>Actualizar</button>
                             
                             

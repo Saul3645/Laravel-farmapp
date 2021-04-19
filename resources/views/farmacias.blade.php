@@ -10,8 +10,8 @@
             <div class="carousel-item active">
                 <img src="img/img-14.jpg" class="d-block w-100" alt="..." height="701px">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+                    <h5>FARMAPP</h5>
+                    <p>Tu aliado en salúd.</p>
                 </div>
             </div>
         </div>
