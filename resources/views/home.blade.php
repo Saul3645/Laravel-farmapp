@@ -20,14 +20,14 @@
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/img15.jpg" class="d-block w-100" alt="..." height="701px">
+                    <img src="img/medicine-.jpg" class="d-block w-100" alt="..." height="701px">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>Precios bajos</h5>
                         <p>Encuentra el medicamento con el precio mas bajo.</p>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="img/farmaciagirl.jpg" class="d-block w-100" alt="..." height="701px">
+                    <img src="img/img15.jpg" class="d-block w-100" alt="..." height="701px">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>FARMAPP</h5>
                         <p>Tu aliado en salúd.</p>

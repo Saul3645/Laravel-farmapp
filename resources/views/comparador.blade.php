@@ -8,7 +8,7 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/img-14.jpg" class="d-block w-100" alt="..." height="701px">
+                    <img src="img/pharmasict-serving.jpg" class="d-block w-100" alt="..." height="701px">
                     <div class="carousel-caption d-none d-md-block">
                         <h5>FARMAPP</h5>
                         <p>Tu aliado en salúd.</p>
